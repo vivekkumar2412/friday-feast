@@ -28,7 +28,8 @@ export type View =
   | "pick"
   | "visited"
   | "map"
-  | "bill";
+  | "bill"
+  | "thankyou";
 
 export const BILL_FAMILIES = ["Ashrits", "Banerjees", "Joglekars", "Iyers", "Mehta", "Mishras"] as const;
 export type BillFamily = (typeof BILL_FAMILIES)[number];

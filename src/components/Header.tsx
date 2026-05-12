@@ -8,6 +8,7 @@ const TABS: { id: View; label: string; icon: string }[] = [
   { id: "visited", label: "Visited", icon: "✅" },
   { id: "map", label: "Map", icon: "🗺️" },
   { id: "bill", label: "Bill Pay", icon: "🧾" },
+  { id: "thankyou", label: "Thank You", icon: "🙏" },
 ];
 
 interface HeaderProps {

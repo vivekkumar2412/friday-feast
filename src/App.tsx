@@ -9,6 +9,7 @@ import RandomPicker from "./components/RandomPicker";
 import VisitedView from "./components/VisitedView";
 import MapView from "./components/MapView";
 import BillPayView from "./components/BillPayView";
+import ThankYouView from "./components/ThankYouView";
 import AddRestaurantModal from "./components/AddRestaurantModal";
 import RestaurantDetail from "./components/RestaurantDetail";
 import ChatWidget from "./components/ChatWidget";
@@ -36,6 +37,7 @@ export default function App() {
         {currentView === "visited" && <VisitedView />}
         {currentView === "map" && <MapView />}
         {currentView === "bill" && <BillPayView />}
+        {currentView === "thankyou" && <ThankYouView />}
       </main>
 
       {showAddModal && (
