@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-2.5
+           font-semibold text-white shadow-md shadow-brand-500/25
+           transition-all hover:bg-brand-600 hover:shadow-lg
+           hover:shadow-brand-500/30 active:scale-[0.97];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-xl border-2 border-gray-200
+           bg-white px-5 py-2.5 font-semibold text-gray-700
+           transition-all hover:border-gray-300 hover:bg-gray-50
+           active:scale-[0.97];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-xl px-4 py-2
+           font-medium text-gray-600 transition-all
+           hover:bg-gray-100 hover:text-gray-900 active:scale-[0.97];
+  }
+
+  .card {
+    @apply rounded-2xl border border-gray-100 bg-white p-5
+           shadow-sm transition-all hover:shadow-md;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-2.5
+           text-gray-900 placeholder-gray-400 outline-none
+           transition-colors focus:border-brand-400 focus:ring-0;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5
+           text-xs font-semibold;
+  }
+
+  .tab-active {
+    @apply border-b-2 border-brand-500 text-brand-600 font-semibold;
+  }
+
+  .tab-inactive {
+    @apply border-b-2 border-transparent text-gray-500 font-medium
+           hover:text-gray-700 hover:border-gray-300;
+  }
+}
+
+@layer utilities {
+  .wheel-segment {
+    clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+  }
+}
+
+/* Leaflet container sizing */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  z-index: 1;
+}
+
+/* Rich tooltip card on map markers */
+.map-tooltip-card {
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,.15), 0 4px 10px -5px rgba(0,0,0,.1) !important;
+  overflow: hidden;
+}
+.map-tooltip-card::before {
+  border-top-color: white !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  animation: fade-in 0.2s ease-out;
+}
+.modal-content {
+  animation: slide-up-modal 0.3s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slide-up-modal {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}

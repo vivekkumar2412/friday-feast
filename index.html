@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Friday Feast</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Clear stored data when seed version changes so fresh data loads
+      var SEED_V = "5";
+      try {
+        if (localStorage.getItem("friday-feast-sv") !== SEED_V) {
+          localStorage.removeItem("friday-feast-restaurants");
+          localStorage.setItem("friday-feast-sv", SEED_V);
+        }
+      } catch(e) {}
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
